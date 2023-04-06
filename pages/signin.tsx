@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useUser } from '../UserContext';
+import styles from '../styles/signin.module.css';
 
 function SignInPage() {
   const { user } = useUser();
@@ -27,8 +28,9 @@ function SignInPage() {
   };
 
   return (
-    <div>
-      <form onSubmit={signIn}>
+    <div className={styles.container}>
+      <form className={styles.form} onSubmit={signIn}>
+        <h2 className={styles.title}>Sign In</h2>
         <input
           type="email"
           placeholder="Email"
