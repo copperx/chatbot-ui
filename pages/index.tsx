@@ -1,3 +1,5 @@
+import { useAuth } from '../useAuth';
+import { useUser } from '../UserContext';
 import { Chat } from '@/components/Chat/Chat';
 import { Chatbar } from '@/components/Chatbar/Chatbar';
 import { Navbar } from '@/components/Mobile/Navbar';
@@ -49,6 +51,9 @@ const Home: React.FC<HomeProps> = ({
   serverSidePluginKeysSet,
   defaultModelId,
 }) => {
+  useAuth();
+
+
   const { t } = useTranslation('chat');
 
   // STATE ----------------------------------------------
